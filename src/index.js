@@ -48,12 +48,15 @@ var rootModel = new falcor.Model({
       }
     ]
   },
-  onChange: () => {
-    modelChanges.onNext(rootModel);
-  }
+  // onChange: () => {
+  //   // modelChanges.onNext(rootModel);
+  //   console.log('change occured');
+  // }
 });
 
 const modelChanges = new Rx.BehaviorSubject(rootModel);
+
+rootModel._root.onChange = () => {console.log('new model streamed');modelChanges.onNext(rootModel);}
 
 modelChanges.
   flatMapLatest(model => model.
