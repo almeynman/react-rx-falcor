@@ -5,7 +5,7 @@ var merge = require('webpack-merge');
 
 var TARGET = process.env.npm_lifecycle_event;
 var ROOT_PATH = path.resolve(__dirname);
-var SOURCE_PATH = path.resolve(ROOT_PATH, 'src');
+var SOURCE_PATH = path.resolve(ROOT_PATH, 'src', 'client');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
 
 var common = {
@@ -41,7 +41,13 @@ if(TARGET === 'start' || !TARGET) {
       historyApiFallback: true,
       hot: true,
       inline: true,
-      progress: true
+      progress: true,
+      proxy: {
+            '/model.json*': {
+                target: 'http://localhost:3000',
+                secure: true,
+            },
+        },
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin()

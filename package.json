@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "node src/server",
     "start": "webpack-dev-server --display-error-details"
   },
   "babel": {
@@ -27,15 +28,18 @@
     "webpack-merge": "^0.3.0"
   },
   "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
     "falcor": "^0.1.14",
+    "falcor-express": "^0.1.2",
+    "falcor-http-datasource": "^0.1.2",
+    "falcor-router": "^0.2.12",
     "history": "^1.13.1",
     "immutable": "^3.7.5",
     "lodash": "^3.10.1",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-router": "^1.0.0",
-    "recompose": "^0.11.2",
-    "rx": "^4.0.7",
-    "rx-recompose": "^0.2.0"
+    "rx": "^4.0.7"
   }
 }
