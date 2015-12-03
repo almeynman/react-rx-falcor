@@ -11,6 +11,6 @@ const TodoList = ({todos}) => <div>
   </div>
 </div>
 
-TodoList.queries = ['todos', {from: 0, to: 1}, ['text', 'completed']];
+TodoList.queries = ['todos', {from: 0, to: 9}, ['text', 'completed']];
 
 export default TodoList;
